@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gaon Saathi AI</title>
+<style>
+body{font-family:Arial,sans-serif;background:#eef7ee;text-align:center;padding:20px}
+.box{max-width:500px;margin:auto;background:white;padding:20px;border-radius:15px}
+h1{color:green}
+input,button{padding:12px;margin:8px;width:85%;border-radius:8px}
+button{background:green;color:white;border:0}
+#answer{padding:15px;background:#e0f2e1;margin-top:15px}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>🌱 गाँव साथी AI</h1>
+<p>ग्रामीण विकास के लिए आपका डिजिटल साथी</p>
+<p>सरकारी योजनाओं, शिक्षा, स्वास्थ्य और रोजगार के बारे में पूछें।</p>
+<input id="q" placeholder="अपना सवाल हिंदी में लिखें">
+<button onclick="ask()">जानकारी प्राप्त करें</button>
+<div id="answer">आपका जवाब यहाँ दिखाई देगा।</div>
+</div>
+<script>
+function ask(){
+let q=document.getElementById('q').value.trim();
+let a=document.getElementById('answer');
+if(!q){a.innerText='कृपया अपना सवाल लिखें।';return;}
+if(q.includes('रोजगार')||q.includes('नौकरी')){
+a.innerText='रोजगार के अवसरों के लिए National Career Service पोर्टल देखें।';
+}else if(q.includes('शिक्षा')||q.includes('पढ़ाई')){
+a.innerText='छात्रवृत्ति और शिक्षा योजनाओं की जानकारी संबंधित सरकारी पोर्टल पर देखें।';
+}else if(q.includes('स्वास्थ्य')){
+a.innerText='स्वास्थ्य सेवाओं के लिए नजदीकी सरकारी स्वास्थ्य केंद्र से संपर्क करें।';
+}else if(q.includes('योजना')||q.includes('सरकारी')){
+a.innerText='सरकारी योजनाओं की जानकारी myScheme पोर्टल पर देखें। पात्रता की पुष्टि जरूर करें।';
+}else{
+a.innerText='यह शुरुआती डेमो है। शिक्षा, रोजगार, स्वास्थ्य या सरकारी योजनाओं के बारे में सवाल पूछें। अभी इसमें वास्तविक AI जुड़ा नहीं है।';
+}
+}
+</script>
+</body>
+  </html>
